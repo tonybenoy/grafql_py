@@ -2,7 +2,6 @@ import graphene
 import pendulum
 from graphene import Int, List, ObjectType, String
 
-
 from src.utils import filter_by
 
 
