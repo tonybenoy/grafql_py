@@ -1,0 +1,12 @@
+version: "3"
+services:
+  fastapi:
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+    image: localhost:5000/tony/graphenepy
+    network_mode: host
+    volumes:
+      - type: bind
+        source: ./src
+        target: /src
