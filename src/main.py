@@ -1,14 +1,14 @@
 import json
-from src.utils import filter_by
 from typing import List
 
 import pendulum
 from fastapi import FastAPI
-from graphene import List, ObjectType, Schema, String, Int
+from graphene import Int, List, ObjectType, Schema, String
 from graphql.execution.executors.asyncio import AsyncioExecutor
 from starlette.graphql import GraphQLApp
 
 from src.schema import Data
+from src.utils import filter_by
 
 with open("./src/mock_data.json") as f:
     data = json.load(f)
