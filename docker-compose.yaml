@@ -10,3 +10,4 @@ services:
       - type: bind
         source: ./src
         target: /src
+    command: "gunicorn -b 0.0.0.0:8000 src.main:app -w 1 -k uvicorn.workers.UvicornWorker --preload"
