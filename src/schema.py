@@ -20,6 +20,7 @@ class Query(ObjectType):
         sort=String(),
         first=Int(),
         skip=Int(),
+        page=Int(),
     )
 
     async def resolve_get_data(self, info, **args):
@@ -28,6 +29,7 @@ class Query(ObjectType):
         q_sort = args.get("sort")
         q_first = args.get("first")
         q_skip = args.get("skip")
+        q_page = args.get("page")
         from src.main import data
 
         data_filtered = data
@@ -38,10 +40,10 @@ class Query(ObjectType):
         if q_sort:
             data_filtered = sorted(
                 data_filtered,
-                key=lambda k: k[q_sort]
-                if q_sort != "dateLastEdited"
-                else pendulum.parse(k[q_sort]),
+                key=lambda k: k[q_sort],
             )
+        if q_page:
+            q_skip, q_first = q_page, 10
         if q_skip:
             data_filtered = data_filtered[q_skip:]
         if q_first:
