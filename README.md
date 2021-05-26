@@ -26,7 +26,8 @@ Access the server [here](http://127.0.0.1:8000)
 ## Running  testcases
 
 ### Using docker
-```docker run -it localhost:5000/tony/graphenepy  python -m pytest -s test
+```
+docker run -it localhost:5000/tony/graphenepy  python -m pytest -s test
 ```
 ### Locally
 ```
