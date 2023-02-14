@@ -27,7 +27,7 @@ pytzdata==2020.1
 regex==2021.4.4
 Rx==1.6.1
 six==1.16.0
-starlette==0.14.2
+starlette==0.25.0
 toml==0.10.2
 typing-extensions==3.10.0.0
 uvicorn==0.13.4
